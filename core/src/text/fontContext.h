@@ -122,6 +122,8 @@ public:
 
     void fetch(const FontDescription& _ft);
 
+    void addTTFblob(char* data, size_t size, FontDescription& _ft);
+
     std::atomic_ushort resourceLoad;
 
 private:

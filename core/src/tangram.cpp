@@ -587,6 +587,11 @@ void Map::clearDataSource(DataSource& _source, bool _data, bool _tiles) {
     requestRender();
 }
 
+void Map::addTTFblob(char* _data, size_t _size, const char* _family, const char* _style, const char* _weight) {
+    FontDescription desc(std::string(_family), std::string(_style), std::string(_weight), "");
+    impl->scene->fontContext()->addTTFblob(_data, _size, desc);
+}
+
 void Map::handleTapGesture(float _posX, float _posY) {
 
     impl->inputHandler.handleTapGesture(_posX, _posY);
