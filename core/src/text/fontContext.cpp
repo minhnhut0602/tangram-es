@@ -14,9 +14,6 @@
 #define FONT_JA "fonts/DroidSansJapanese.ttf"
 #define FALLBACK "fonts/DroidSansFallback.ttf"
 
-#if defined(PLATFORM_ANDROID)
-#define ANDROID_FONT_PATH "/system/fonts/"
-#endif
 #define BASE_SIZE   16
 #define STEP_SIZE   12
 #define MAX_STEPS   3
