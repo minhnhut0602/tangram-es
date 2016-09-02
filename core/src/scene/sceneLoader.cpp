@@ -1135,7 +1135,7 @@ void SceneLoader::loadCamera(const Node& _camera, const std::shared_ptr<Scene>& 
             } else if (fov.IsSequence()) {
                 camera.fovStops = std::make_shared<Stops>(Stops::Numbers(fov));
                 for (auto& f : camera.fovStops->frames) {
-                    f.value = f.value.get<float>() * DEG_TO_RAD;
+                    f.value = float(f.value.get<float>() * DEG_TO_RAD);
                 }
             }
         }
@@ -1364,7 +1364,7 @@ void SceneLoader::parseStyleParams(Node params, const std::shared_ptr<Scene>& sc
 
         if (key == "text") {
             // Add StyleParam to signify that icon uses text
-            out.emplace_back(StyleParamKey::point_text, StyleParam::Value{""});
+            out.emplace_back(StyleParamKey::point_text, StyleParam::Value{std::string{""}});
         }
 
         Node value = prop.second;

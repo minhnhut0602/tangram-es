@@ -159,7 +159,7 @@ StyleParam::Value StyleParam::parseString(StyleParamKey key, const std::string& 
             return std::numeric_limits<uint32_t>::max();
         }
         if (_value == "true") {
-            return 15; // DEFAULT
+            return uint32_t(15); // DEFAULT
         }
         if (parseInt(_value, textWrap) > 0 && textWrap > 0) {
              return static_cast<uint32_t>(textWrap);
@@ -326,7 +326,7 @@ StyleParam::Value StyleParam::parseString(StyleParamKey key, const std::string& 
 std::string StyleParam::toString() const {
 
     std::string k(keyName(key));
-    k += " : ";
+    k += ", value type:" + std::to_string(value.which()) + " / ";
 
     // TODO: cap, join and color toString()
     if (value.is<none_type>()) {
@@ -416,7 +416,7 @@ std::string StyleParam::toString() const {
 
     }
 
-    return k + "undefined " + std::to_string(static_cast<uint8_t>(key));
+    return k + "undefined";
 
 }
 
