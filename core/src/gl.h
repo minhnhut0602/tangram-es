@@ -9,6 +9,9 @@
 #if defined(PLATFORM_ANDROID) || defined(PLATFORM_RPI)
 typedef long GLsizeiptr;
 typedef long GLintptr;
+#elif defined(PLATFORM_TIZEN)
+typedef signed long int  GLintptr;     // Changed khronos_intptr_t
+typedef signed long int  GLsizeiptr;   // Changed khronos_ssize_t
 #else
 #include <stddef.h>
 typedef ptrdiff_t GLsizeiptr;

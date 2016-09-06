@@ -34,10 +34,10 @@ void GL::depthFunc(GLenum func) {
 void GL::depthMask(GLboolean flag) {
     __evas_gl_glapi->glDepthMask(flag);
 }
-void GL::depthRangef(GLfloat n, GLfloat f) {
+void GL::depthRange(GLfloat n, GLfloat f) {
     __evas_gl_glapi->glDepthRangef(n, f);
 }
-void GL::clearDepthf(GLfloat d) {
+void GL::clearDepth(GLfloat d) {
     __evas_gl_glapi->glClearDepthf(d);
 }
 void GL::blendFunc(GLenum sfactor, GLenum dfactor) {
@@ -98,8 +98,8 @@ void GL::linkProgram(GLuint program) {
     __evas_gl_glapi->glLinkProgram(program);
 }
 
-void GL::shaderSource(GLuint shader, GLsizei count, const GLchar *const*string, const GLint *length) {
-        auto source = const_cast<const GLchar**>(string);
+void GL::shaderSource(GLuint shader, GLsizei count, const GLchar **string, const GLint *length) {
+    auto source = const_cast<const GLchar**>(string);
     __evas_gl_glapi->glShaderSource(shader, count, source, length);
 }
 void GL::getShaderInfoLog(GLuint shader, GLsizei bufSize, GLsizei *length, GLchar *infoLog) {
