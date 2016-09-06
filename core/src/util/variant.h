@@ -42,6 +42,11 @@ using Value = variant<none_type, double, std::string>;
 class Value : public detail::Value {
     using Base = detail::Value;
     using Base::Base;
+
 };
+
+const static Value VALUE_NOT_FOUND(none_type{});
+
+
 
 }
