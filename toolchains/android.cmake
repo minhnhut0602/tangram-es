@@ -41,9 +41,3 @@ target_compile_options(${LIB_NAME}
 # if(CMAKE_BUILD_TYPE MATCHES Debug)
 # android_ndk_gdb_debuggable(${LIB_NAME})
 # endif()
-
-# install to android library dir
-set(LIB_INSTALLATION_PATH ${CMAKE_SOURCE_DIR}/android/tangram/libs/${ANDROID_ABI})
-
-
-install(TARGETS ${LIB_NAME} DESTINATION ${LIB_INSTALLATION_PATH})
