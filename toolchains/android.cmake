@@ -34,10 +34,6 @@ target_link_libraries(${LIB_NAME}
   ${ATOMIC_LIB}
   GLESv2 log z android)
 
-target_compile_options(${LIB_NAME}
-  PUBLIC
-  -fPIC)
-
 # if(CMAKE_BUILD_TYPE MATCHES Debug)
 # android_ndk_gdb_debuggable(${LIB_NAME})
 # endif()
